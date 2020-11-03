@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>To Do App</h1>
+            <p>Dika Koliongan in Paralu</p>
+        </header>
+        <main>
+            <input type="text" id="inputtext" placeholder="onu in paralumu?">
+            <button id="btn">dorot</button>
+            <ul id="wrap_list"></ul>
+        </main>
+    </div>
+</body>
+
+<script>
+    const inputText = document.querySelector('#inputtext')
+    const btn = document.querySelector('#btn')
+    const wrapList = document.querySelector('#wrap_list')
+
+    // add list
+    btn.addEventListener('click', function(){
+        const list = `<li class="list_item"><input type="checkbox" class="checkbox" onclick="toggle()"> ${inputText.value} </li>`
+        wrapList.insertAdjacentHTML('afterbegin', list)
+        inputText.value = ''
+    })
+
+    function toggle(){
+        const listItem = document.getElementsByClassName('list_item')
+        const checkbox = document.getElementsByClassName('checkbox')
+
+        for(let i = 0; i < listItem.length; i++){
+            return (checkbox[i].checked === true) ? listItem[i].style.textDecoration = 'line-through' : listItem[i].style.textDecoration = 'none'
+        }
+
+    }
+
+</script>
+
+</html>
