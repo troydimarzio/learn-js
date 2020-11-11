@@ -154,6 +154,43 @@ const reduce = angka.reduce(function(prev, curr){
 const newAngka = angka.filter(curr => curr > 2)
     .map(curr => curr * 2)
     .reduce((prev, curr) => prev + curr);
+
+/* ======================== closures, lexical scope ==============================
+
+* closure -> inner function yg bisa akses variabel maupun argumen yg ada di dalam function nya maupun di luar functionnya sekalipun pada global scope
+* lexical scope ->
+====================================================================== */
+// let var1 = "helo1";
+
+// function outerFunction(param1){
+//     let var2 = "helo2";
+
+//     function innerFunction(param2){
+//         let var3 = "helo3";
+
+//         function gokil(){
+//             // console.log(var1);
+//             // console.log(var2);
+//             // console.log(var3);
+//             // console.log(param1);
+//             // console.log(param2);
+//         }
+//         gokil();
+//     }
+
+//     innerFunction("param 2");
+// }
+
+// outerFunction("param 1")
+
+/* ======================== IIFE ==============================
+* function anomymous yg langsung di invoke
+====================================================================== */
+
+(function(nama){
+    console.log(nama);
+})("troy");
     
 
-console.log(newAngka);
+// console.log(typeof []);
+// console.log(typeof {});
