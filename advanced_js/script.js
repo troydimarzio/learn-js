@@ -187,10 +187,83 @@ const newAngka = angka.filter(curr => curr > 2)
 * function anomymous yg langsung di invoke
 ====================================================================== */
 
-(function(nama){
-    console.log(nama);
-})("troy");
-    
+// (function(nama){
+//     console.log(nama);
+// })("troy");
+
+/* ======================== Destructuring ==============================
+* destructuring -> mengextract isi dari array atau object ke dalam variabel baru 
+====================================================================== */
+
+// const num = [1, 2, 3, 4, 5];
+// const [a, b, c, d, e] = num;
+
+// let a = 1, b = 2;
+// [b,a] = [a,b];
+
+// let obj = {
+//     nama: "troy",
+//     umur: 22
+// }
+
+// function iniFunction({nama, umur}){
+//     return nama + ", " + umur;
+// }
+
+// console.log(iniFunction(obj));
+
+// let {nama, umur} = obj;
+
+// function iniFunction(){
+//     return [1, 2,3];
+// }
+
+// let [a, b, c] = iniFunction();
+
+
+// destructuring function
+
+// function kalkulasi(a, b){
+//     return [a+b, a-b, a*b];
+// }
+
+// const [tambah, kurang, kali, bagi = "default"] = kalkulasi(1,2);
+
+const obj = {
+    nama: "troy",
+    umur: 22,
+    fullname: function(){
+        return `hi ${nama}?`;
+    }
+}
+
+function people({nama}){
+    return nama;
+}
+
+/* ======================== Spread Operator ==============================
+* meng unpack isi array
+* mencopy isi array
+* menggabungkan array / concat
+====================================================================== */
+
+const array = [1, 2, 3];
+
+const ar = [...array];
+
+/* ======================== Rest Parameter ==============================
+* bisa menagkap banyak argumen pada function menjadi sebuah array
+====================================================================== */
+
+const iniVar = new Array(1, 2, 3);
+const v = 5;
+function iniFunction(v, a){
+    return [v, ...a];
+}
+
+
+console.log(iniFunction(v, iniVar));
+
 
 // console.log(typeof []);
 // console.log(typeof {});
